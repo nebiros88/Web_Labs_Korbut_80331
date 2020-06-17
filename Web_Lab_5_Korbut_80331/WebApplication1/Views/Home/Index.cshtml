@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "Главная страница";
+
+}
+
+<h2>@ViewData["Text"]</h2>
+<h2>Список</h2>
+<ol type="A">
+    @for (int i = 1; i < 5; i++)
+    {
+        <li>элемент @i списка </li>
+    }
+</ol>
+<div class="main_divider"></div>
+<h2>Форма</h2>
+
+<form class="main_form" action="/" method="post">
+    <select asp-items="@ViewData["Lst"] as SelectList"></select>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="main_checkbox" />
+        <label class="form-check-label" for="defaultCheck1"> Чек-бокс 1</label>
+        <br />
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" name="main_checkbox" />
+        <label class="form-check-label" for="defaultCheck2"> Чек-бокс 2</label>
+    </div>
+    <br />
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">Радио-1</label>
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <label class="form-check-label" for="inlineRadio1">Радио-2</label>
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+        <label class="form-check-label" for="inlineRadio1">Радио-3</label>
+    </div>
+    <br />
+    <br />
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Логин</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="Введите имя" name="login">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Пароль</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Введите пароль" name="password">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </div>
+    </div>
+</form>
+
